@@ -1,0 +1,7 @@
+[user]
+name = Aaron Hooper
+email = rnjckhpr@gmail.com
+username = aaronhooper
+
+[alias]
+lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
