@@ -17,6 +17,7 @@ dovecot
 e2fsprogs
 elinks
 fakeroot
+feh
 file
 filesystem
 findutils
@@ -39,6 +40,7 @@ iputils
 jfsutils
 keepassxc
 less
+lib32-nvidia-utils
 licenses
 linux
 linux-firmware
@@ -50,10 +52,13 @@ make
 man-db
 man-pages
 mdadm
+mupdf
 mutt
 nano
+neofetch
 netctl
 noto-fonts-emoji
+nss-mdns
 ntfs-3g
 numix-icon-theme-git
 nvidia
@@ -72,10 +77,11 @@ redshift
 reiserfsprogs
 rxvt-unicode
 s-nail
-screenfetch
 sed
 shadow
+steam
 sudo
+surf
 sysfsutils
 systemd-sysvcompat
 tar
@@ -87,6 +93,7 @@ usbutils
 util-linux
 vi
 vim
+vlc
 weechat
 wget
 which
