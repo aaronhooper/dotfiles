@@ -12,3 +12,4 @@ set scrolloff=7
 
 syntax on
 inoremap jj <esc>
+nnoremap Y y$
