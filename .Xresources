@@ -1,5 +1,5 @@
 URxvt*scrollBar: False
-URxvt.font: xft:Source Code Pro:autohint=true:size=12
+URxvt.font: xft:Ubuntu Mono:autohint=true:size=14
 URxvt.geometry: 84x24
 
 ! --- special colors ---
