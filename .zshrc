@@ -100,4 +100,9 @@ export VISUAL=$EDITOR
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Git dotfiles alias
 alias config='/usr/bin/git --git-dir=/home/aaron/.cfg/ --work-tree=/home/aaron'
+
+# For bspwm but possibly for other things too
+export XDG_CONFIG_HOME="$HOME/.config"
