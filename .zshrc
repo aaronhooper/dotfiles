@@ -106,3 +106,8 @@ alias config='/usr/bin/git --git-dir=/home/aaron/.cfg/ --work-tree=/home/aaron'
 
 # For bspwm but possibly for other things too
 export XDG_CONFIG_HOME="$HOME/.config"
+
+# Import colorscheme from 'wal' asynchronously
+# &   # Run the process in the background.
+# ( ) # Hide shell job control messages.
+(cat ~/.cache/wal/sequences &)
