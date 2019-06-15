@@ -111,3 +111,8 @@ export XDG_CONFIG_HOME="$HOME/.config"
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
 (cat ~/.cache/wal/sequences &)
+
+# For golang
+export GOPATH=$(go env GOPATH)
+export PATH=$PATH:$GOPATH/bin
+
