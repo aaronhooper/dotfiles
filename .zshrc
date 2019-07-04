@@ -1,14 +1,14 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$HOME/.scripts:$HOME/.local/bin:$PATH
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/aaron/.oh-my-zsh"
+export ZSH="/home/azza/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="ys"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -86,9 +86,6 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 
-export EDITOR='vim'
-export VISUAL=$EDITOR
-
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -100,19 +97,4 @@ export VISUAL=$EDITOR
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# Git dotfiles alias
-alias config='/usr/bin/git --git-dir=/home/aaron/.cfg/ --work-tree=/home/aaron'
-
-# For bspwm but possibly for other things too
-export XDG_CONFIG_HOME="$HOME/.config"
-
-# Import colorscheme from 'wal' asynchronously
-# &   # Run the process in the background.
-# ( ) # Hide shell job control messages.
-(cat ~/.cache/wal/sequences &)
-
-# For golang
-export GOPATH=$(go env GOPATH)
-export PATH=$PATH:$GOPATH/bin
-
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
