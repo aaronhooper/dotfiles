@@ -1,7 +1,0 @@
-set folder = "imaps://rnjckhpr@gmail.com@imap.gmail.com:993"
-set smtp_url = "smtp://rnjckhpr@gmail.com@smtp.gmail.com:587"
-
-set spoolfile = "+INBOX"
-
-set from = "rnjckhpr@gmail.com"
-set realname = "Aaron Hooper"
