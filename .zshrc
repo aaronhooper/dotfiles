@@ -111,3 +111,7 @@ export PATH="${PATH}:${HOME}/.local/bin/"
 
 # Yarn global
 export PATH="${PATH}:${HOME}/.yarn/bin/"
+
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
