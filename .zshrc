@@ -108,3 +108,6 @@ export PATH="${PATH}:${HOME}/.local/bin/"
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
 (cat ~/.cache/wal/sequences &)
+
+# Yarn global
+export PATH="${PATH}:${HOME}/.yarn/bin/"
