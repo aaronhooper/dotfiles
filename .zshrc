@@ -100,3 +100,11 @@ source $ZSH/oh-my-zsh.sh
 
 # For git bare dotfiles repo
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+# Pywal
+export PATH="${PATH}:${HOME}/.local/bin/"
+
+# Import colorscheme from 'wal' asynchronously
+# &   # Run the process in the background.
+# ( ) # Hide shell job control messages.
+(cat ~/.cache/wal/sequences &)
