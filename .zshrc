@@ -112,6 +112,12 @@ export PATH="${PATH}:${HOME}/.local/bin/"
 # Yarn global
 export PATH="${PATH}:${HOME}/.yarn/bin/"
 
-export VISUAL=vim
+# Editor
+export VISUAL=nvim
 export EDITOR="$VISUAL"
 
+# Git alias
+alias g="git"
+
+# Neovim alias
+alias vim="nvim"
