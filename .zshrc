@@ -29,5 +29,6 @@ export EDITOR="$VISUAL"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias g="git"
 alias vim="nvim"
+alias emacs="emacs -nw"
 alias vimconfig="nvim ~/.config/nvim/init.vim"
-
+alias zshconfig="nvim ~/.zshrc"
