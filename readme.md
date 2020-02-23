@@ -1,3 +1,15 @@
+
+## Dependencies
+- [better-defaults](https://github.com/technomancy/better-defaults)
+
+To install the dependencies, fetch the submodules after cloning this repo.
+
+```bash
+git submodule init
+git submodule update
+```
+---
+
 [Source](https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/ "Permalink to The best way to store your dotfiles: A bare Git repository")
 
 # The best way to store your dotfiles: A bare Git repository
