@@ -1,0 +1,3 @@
+[submodule ".emacs.d/better-defaults"]
+	path = .emacs.d/better-defaults
+	url = https://github.com/technomancy/better-defaults
