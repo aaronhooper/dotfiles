@@ -17,7 +17,7 @@
     ("d362eed16f74bfa8e49df0185a9336184d479e120c41837a5e6f020e0336bf7f" default)))
  '(org-agenda-files
    (quote
-    ("~/org/projects.org" "~/org/calendar.org" "~/org/inbox.org" "~/org/someday.org" "~/org/nextactions.org")))
+    ("~/org/calendar.org" "~/org/inbox.org" "~/org/someday.org" "~/org/next.org")))
  '(package-selected-packages
    (quote
     (magit dracula-theme org-capture-pop-frame markdown-mode geiser racket-mode slime))))
@@ -138,14 +138,18 @@ point reaches the beginning or end of the buffer, stop there."
 
 ;; Set custom org-capture templates
 (setq org-capture-templates '(("i" "Inbox" plain (file+headline "inbox.org" "Inbox"))
-                              ("n" "Next Actions" entry (file+headline "nextactions.org" "Next Actions")
+                              ("n" "Next Actions" entry (file+headline "next.org" "Next Actions")
                                "* NEXT %c")
                               ("s" "Someday/Maybe" entry (file+headline "someday.org" "Someday/Maybe")
                                "* %c")
                               ("c" "Calendar" entry (file+headline "calendar.org" "Calendar")
                                "* %c")
-                              ("p" "Projects" entry (file+headline "projects.org" "Projects")
+                              ("p" "Projects" entry (file+headline "next.org" "Projects")
                                "* %c")))
+
+;; Set refile targets (so captures can be refiled under individual
+;; projects)
+(setq org-refile-targets '(("next.org" :maxlevel . 2)))
 
 ;; Enable line numbers
 (global-display-line-numbers-mode)
@@ -164,4 +168,4 @@ point reaches the beginning or end of the buffer, stop there."
 (put 'upcase-region 'disabled nil)
 
 ;; Open org-agenda on Emacs startup
-(add-hook 'after-init-hook 'org-agenda-list)
+;(add-hook 'after-init-hook 'org-agenda-list)
