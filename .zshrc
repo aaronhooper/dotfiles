@@ -22,13 +22,19 @@ export PATH="${PATH}:${HOME}/.local/bin/"
 export PATH="${PATH}:${HOME}/.yarn/bin/"
 
 # Editor
-export VISUAL=nvim
+export VISUAL="emacs -nw -Q"
 export EDITOR="$VISUAL"
+
+# XDG
+export XDG_CONFIG_HOME="${HOME}/.config"
+export XDG_CACHE_HOME="${HOME}/.cache"
+export XDG_DATA_HOME="${HOME}/.local/share"
 
 # Aliases
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias g="git"
 alias vim="nvim"
-alias emacs="emacs -nw"
+alias emacs="emacs -nw -Q"
 alias vimconfig="nvim ~/.config/nvim/init.vim"
 alias zshconfig="nvim ~/.zshrc"
+alias latex="tex"
