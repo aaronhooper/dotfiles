@@ -181,7 +181,7 @@ point reaches the beginning or end of the buffer, stop there."
 (setq inhibit-startup-screen t)
 
 ;; Set font size
-(set-face-attribute 'default nil :height 140)
+(set-face-attribute 'default nil :height 130)
 
 ;; If the window's width in chars is less than number, truncate lines
 ;; for windows narrower than the full frame width
@@ -198,6 +198,10 @@ point reaches the beginning or end of the buffer, stop there."
 
 ;; Allow typing in a region to delete the region
 (delete-selection-mode 1)
+
+;; Set C indent style
+(setq c-default-style "bsd"
+      c-basic-offset 4)
 
 ;; Load theme
 (load-theme 'odersky t)
