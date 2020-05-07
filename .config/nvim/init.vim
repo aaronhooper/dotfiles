@@ -14,6 +14,7 @@ set smartindent
 set ignorecase
 set smartcase
 set textwidth=72
+set laststatus=2
 
 filetype plugin on
 
@@ -21,8 +22,6 @@ filetype plugin on
 """"""""""""""""""
 """" BINDINGS """"
 """"""""""""""""""
-
-"let mapleader = " "
 
 " Escape remap
 inoremap jj <esc>
@@ -38,6 +37,9 @@ inoremap Y y$
 call plug#begin('~/.vim/plugged')
 
 Plug 'jiangmiao/auto-pairs'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
+let g:airline_theme='alduin'

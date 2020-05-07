@@ -22,7 +22,7 @@ export PATH="${PATH}:${HOME}/.local/bin/"
 export PATH="${PATH}:${HOME}/.yarn/bin/"
 
 # Editor
-export VISUAL="emacs -nw -Q"
+export VISUAL="nvim"
 export EDITOR="$VISUAL"
 
 # XDG
