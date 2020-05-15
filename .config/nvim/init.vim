@@ -15,6 +15,7 @@ set ignorecase
 set smartcase
 set textwidth=72
 set laststatus=2
+set backspace=indent,eol,start
 
 filetype plugin on
 
@@ -27,8 +28,10 @@ filetype plugin on
 inoremap jj <esc>
 
 " Yank polyfill
-inoremap Y y$
+nnoremap Y y$
 
+" Map Ctrl-Backspace to delete previous word
+imap <C-BS> <C-W>
 
 """""""""""""""""
 """" PLUGINS """"
