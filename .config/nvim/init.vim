@@ -4,6 +4,7 @@
 
 set nocp
 set number
+set relativenumber
 set hlsearch
 set incsearch
 set expandtab
