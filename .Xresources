@@ -1,7 +1,0 @@
-URxvt*scrollBar: False
-URxvt.font: xft:Ubuntu Mono:autohint=true:size=12
-URxvt.geometry: 84x24
-URxvt.internalBorder: 15
-
-URxvt.iso14755: false
-URxvt.iso14755_52: false
