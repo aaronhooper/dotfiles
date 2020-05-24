@@ -12,13 +12,14 @@ set shiftwidth=4
 set tabstop=4
 set softtabstop=4
 set smartindent
+set autoindent
 set ignorecase
 set smartcase
 set textwidth=72
 set laststatus=2
 set backspace=indent,eol,start
 
-filetype plugin on
+filetype plugin indent on
 
 
 """"""""""""""""""
