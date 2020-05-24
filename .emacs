@@ -19,7 +19,10 @@
  '(custom-enabled-themes nil)
  '(custom-safe-themes
    (quote
-    ("e0d42a58c84161a0744ceab595370cbe290949968ab62273aed6212df0ea94b4" "72a81c54c97b9e5efcc3ea214382615649ebb539cb4f2fe3a46cd12af72c7607" "c48551a5fb7b9fc019bf3f61ebf14cf7c9cdca79bcb2a4219195371c02268f11" "987b709680284a5858d5fe7e4e428463a20dfabe0a6f2a6146b3b8c7c529f08b" "3d5ef3d7ed58c9ad321f05360ad8a6b24585b9c49abcee67bdcbb0fe583a6950" "58c6711a3b568437bab07a30385d34aacf64156cc5137ea20e799984f4227265" "9b59e147dbbde5e638ea1cde5ec0a358d5f269d27bd2b893a0947c4a867e14c1" "d362eed16f74bfa8e49df0185a9336184d479e120c41837a5e6f020e0336bf7f" default)))
+    ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "41098e2f8fa67dc51bbe89cce4fb7109f53a164e3a92356964c72f76d068587e" "ba72dfc6bb260a9d8609136b9166e04ad0292b9760a3e2431cf0cd0679f83c3a" "e0d42a58c84161a0744ceab595370cbe290949968ab62273aed6212df0ea94b4" "72a81c54c97b9e5efcc3ea214382615649ebb539cb4f2fe3a46cd12af72c7607" "c48551a5fb7b9fc019bf3f61ebf14cf7c9cdca79bcb2a4219195371c02268f11" "987b709680284a5858d5fe7e4e428463a20dfabe0a6f2a6146b3b8c7c529f08b" "3d5ef3d7ed58c9ad321f05360ad8a6b24585b9c49abcee67bdcbb0fe583a6950" "58c6711a3b568437bab07a30385d34aacf64156cc5137ea20e799984f4227265" "9b59e147dbbde5e638ea1cde5ec0a358d5f269d27bd2b893a0947c4a867e14c1" "d362eed16f74bfa8e49df0185a9336184d479e120c41837a5e6f020e0336bf7f" default)))
+ '(exec-path
+   (quote
+    ("/usr/local/bin" "/usr/bin" "/bin" "/usr/local/games" "/usr/games" "/usr/lib/emacs/26.1/x86_64-linux-gnu")))
  '(org-agenda-files
    (list
     (concat
@@ -28,7 +31,7 @@
  '(org-directory "~/Documents/org")
  '(package-selected-packages
    (quote
-    (elpy markdown-mode haskell-mode better-defaults sublime-themes magit geiser racket-mode slime))))
+    (ewal-spacemacs-themes ewal elpy markdown-mode haskell-mode better-defaults sublime-themes magit geiser racket-mode slime))))
 
 
 ;; ===========
@@ -75,6 +78,26 @@ point reaches the beginning or end of the buffer, stop there."
     (insert ";; " name " <" email ">\n"
             ";; " (format-time-string "%Y-%m-%d") "\n")))
 
+(defun my-increment-number-decimal (&optional arg)
+  "Increment the number forward from point by 'arg'."
+  (interactive "p*")
+  (save-excursion
+    (save-match-data
+      (let (inc-by field-width answer)
+        (setq inc-by (if arg arg 1))
+        (skip-chars-backward "0123456789")
+        (when (re-search-forward "[0-9]+" nil t)
+          (setq field-width (- (match-end 0) (match-beginning 0)))
+          (setq answer (+ (string-to-number (match-string 0) 10) inc-by))
+          (when (< answer 0)
+            (setq answer (+ (expt 10 field-width) answer)))
+          (replace-match (format (concat "%0" (int-to-string field-width) "d")
+                                 answer)))))))
+
+(defun my-decrement-number-decimal (&optional arg)
+  (interactive "p*")
+  (my-increment-number-decimal (if arg (- arg) -1)))
+
 
 ;; ==============
 ;;  KEY BINDINGS
@@ -98,6 +121,12 @@ point reaches the beginning or end of the buffer, stop there."
 
 ;; Remap C-c C-; to comment/uncomment
 (global-set-key (kbd "C-c C-;") 'comment-or-uncomment-region-or-line)
+
+;; Remap C-c + to `my-increment-number-decimal'
+(global-set-key (kbd "C-c +") 'my-increment-number-decimal)
+
+;; Remap C-c + to `my-decrement-number-decimal'
+(global-set-key (kbd "C-c -") 'my-decrement-number-decimal)
 
 
 ;; ==========
@@ -136,7 +165,9 @@ point reaches the beginning or end of the buffer, stop there."
         ("c" "Calendar" entry
          (file+headline "gtd/calendar.org" "Calendar") "* %c")
         ("p" "Projects" entry
-         (file+headline "gtd/next.org" "Projects") "* %c")))
+         (file+headline "gtd/next.org" "Projects") "* %c")
+        ("l" "Shopping List" item
+         (file+headline "gtd/next.org" "Shopping List") "%c")))
 
 ;; Set refile targets so that captures can be refiled under individual
 ;; projects
@@ -168,6 +199,15 @@ point reaches the beginning or end of the buffer, stop there."
 ;; Enable line numbers
 (global-display-line-numbers-mode 1)
 
+;; Enable ido mode
+(ido-mode 1)
+
+;; Make ido search more forgiving
+(setq ido-enable-flex-matching t)
+
+;; Use ido for all buffers
+(ido-everywhere)
+
 ;; Highlight trailing whitespace
 (setq show-trailing-whitespace t)
 
@@ -181,7 +221,7 @@ point reaches the beginning or end of the buffer, stop there."
 (setq inhibit-startup-screen t)
 
 ;; Set font size
-(set-face-attribute 'default nil :height 130)
+(set-face-attribute 'default nil :height 120)
 
 ;; If the window's width in chars is less than number, truncate lines
 ;; for windows narrower than the full frame width
@@ -204,20 +244,10 @@ point reaches the beginning or end of the buffer, stop there."
       c-basic-offset 4)
 
 ;; Load theme
-(load-theme 'odersky t)
-
-
-;; ==============
-;;  CUSTOM FACES
-
+(load-theme 'spacemacs-dark t)
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(bold ((t (:foreground "pale turquoise" :weight bold))))
- '(ido-only-match ((t (:foreground "light green"))))
- '(ido-subdir ((t (:foreground "light sky blue"))))
- '(org-block ((t (:background "gray13"))))
- '(org-block-begin-line ((t (:inherit org-meta-line :background "gray15")))))
-
+ )
