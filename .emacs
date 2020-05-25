@@ -137,13 +137,12 @@ point reaches the beginning or end of the buffer, stop there."
 
 ;; Set custom org mode todo cycle states
 (setq org-todo-keywords
-      '((sequence "NEXT(n)" "WAITING(w)" "DOING(o)" "|" "DONE(d)" "CANCELLED(c)")))
+      '((sequence "NEXT(n)" "DOING(o)" "|" "DONE(d)" "CANCELLED(c)")))
 
 ;; Set custom state colors
 (setq org-todo-keyword-faces
       '(("NEXT" .      (:foreground "sky blue"   :weight bold))
         ("DOING" .     (:foreground "orange"     :weight bold))
-        ("WAITING" .   (:foreground "OrangeRed"  :weight bold))
         ("CANCELLED" . (:foreground "SlateGray4" :weight normal))))
 
 ;; Start org mode files folded
