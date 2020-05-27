@@ -6,4 +6,5 @@
 compton &
 redshift &
 slstatus &
+ckb-next --background &
 exec /usr/local/bin/dwm
