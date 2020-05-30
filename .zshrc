@@ -33,6 +33,10 @@ export XDG_DATA_HOME="${HOME}/.local/share"
 # Golang path
 export GOPATH="${HOME}/.local/lib/go"
 
+# Deno path
+export DENO_INSTALL="/home/aaron/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
 # Aliases
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias g="git"
