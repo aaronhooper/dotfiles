@@ -32,8 +32,6 @@ inoremap jj <esc>
 " Yank polyfill
 nnoremap Y y$
 
-" Map Ctrl-Backspace to delete previous word
-imap <C-BS> <C-W>
 
 """""""""""""""""
 """" PLUGINS """"
