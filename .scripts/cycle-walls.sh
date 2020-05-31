@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/bin/sh
 # Sets the least recently accessed wallpaper in directory
 
 set -xv
