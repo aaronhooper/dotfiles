@@ -18,6 +18,7 @@ set smartcase
 set textwidth=72
 set laststatus=2
 set backspace=indent,eol,start
+set mouse+=a
 
 filetype plugin indent on
 
