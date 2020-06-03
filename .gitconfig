@@ -18,7 +18,6 @@ co = checkout
 p = pull
 r = remote
 s = status
-w = whatchanged
 
 [rebase]
 	autoSquash = true
