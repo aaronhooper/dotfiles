@@ -7,12 +7,6 @@ set number
 set relativenumber
 set hlsearch
 set incsearch
-set expandtab
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
-set smartindent
-set autoindent
 set ignorecase
 set smartcase
 set textwidth=72
@@ -20,6 +14,13 @@ set laststatus=2
 set backspace=indent,eol,start
 set mouse+=a
 
+" Explanations of the following indent settings
+" https://vim.fandom.com/wiki/Indenting_source_code#Explanation_of_the_options
+set expandtab
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+set autoindent
 filetype plugin indent on
 
 
@@ -46,4 +47,10 @@ Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
+
+"""""""""""""""""""""""""
+"""" PLUGIN SETTINGS """"
+"""""""""""""""""""""""""
+
+" Airline
 let g:airline_theme='alduin'
