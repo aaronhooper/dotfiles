@@ -5,6 +5,7 @@ username = aaronhooper
 
 [alias]
 a = add
+ap = add -p
 b = branch
 c = commit
 cv = commit -v
