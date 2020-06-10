@@ -26,6 +26,9 @@ export PATH="${PATH}:${HOME}/.yarn/bin/"
 export VISUAL="nvim"
 export EDITOR="$VISUAL"
 
+# Shell editing
+set -o vi
+
 # XDG
 export XDG_CONFIG_HOME="${HOME}/.config"
 export XDG_CACHE_HOME="${HOME}/.cache"
