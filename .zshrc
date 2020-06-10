@@ -11,16 +11,19 @@ plugins=(zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
-# Pywal
-export PATH="${PATH}:${HOME}/.local/bin/"
-
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
 (cat ~/.cache/wal/sequences &)
 
-# Yarn global binaries
-export PATH="${PATH}:${HOME}/.yarn/bin/"
+# PATH
+export PATH="${PATH}:${HOME}/.local/bin/" # Local binaries
+export PATH="${PATH}:${HOME}/.yarn/bin/"  # Yarn
+export DENO_INSTALL="/home/aaron/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"     # Deno
+
+# Golang
+export GOPATH="${HOME}/.local/lib/go"
 
 # Editor
 export VISUAL="nvim"
@@ -33,13 +36,6 @@ set -o vi
 export XDG_CONFIG_HOME="${HOME}/.config"
 export XDG_CACHE_HOME="${HOME}/.cache"
 export XDG_DATA_HOME="${HOME}/.local/share"
-
-# Golang path
-export GOPATH="${HOME}/.local/lib/go"
-
-# Deno path
-export DENO_INSTALL="/home/aaron/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
 
 # Aliases
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
