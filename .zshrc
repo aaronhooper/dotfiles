@@ -48,3 +48,6 @@ alias zshconfig="nvim ~/.zshrc"
 alias latex="tex"
 alias dirs="dirs -v"
 alias ls="exa"
+alias mutt="neomutt"
+alias d='docker'
+alias dc="docker-compose"
