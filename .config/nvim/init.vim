@@ -13,6 +13,7 @@ set textwidth=72
 set laststatus=2
 set backspace=indent,eol,start
 set mouse+=a
+set noshowmode
 
 " Explanations of the following indent settings
 " https://vim.fandom.com/wiki/Indenting_source_code#Explanation_of_the_options
