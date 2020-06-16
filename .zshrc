@@ -41,6 +41,7 @@ export XDG_DATA_HOME="${HOME}/.local/share"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias g="git"
 alias vim="nvim"
+alias vi="vim"
 alias emacs="emacs -nw -Q"
 alias vimconfig="nvim ~/.config/nvim/init.vim"
 alias zshconfig="nvim ~/.zshrc"
