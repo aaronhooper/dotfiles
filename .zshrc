@@ -37,6 +37,9 @@ export XDG_CONFIG_HOME="${HOME}/.config"
 export XDG_CACHE_HOME="${HOME}/.cache"
 export XDG_DATA_HOME="${HOME}/.local/share"
 
+# Nix
+if [ -e /home/aaron/.nix-profile/etc/profile.d/nix.sh ]; then . /home/aaron/.nix-profile/etc/profile.d/nix.sh; fi
+
 # Aliases
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias g="git"
