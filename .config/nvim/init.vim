@@ -14,6 +14,7 @@ set laststatus=2
 set backspace=indent,eol,start
 set mouse+=a
 set noshowmode
+set nowrap
 
 " Explanations of the following indent settings
 " https://vim.fandom.com/wiki/Indenting_source_code#Explanation_of_the_options
@@ -52,6 +53,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'mattn/emmet-vim'
 
 call plug#end()
 
