@@ -35,6 +35,13 @@ inoremap jj <esc>
 " Yank polyfill
 nnoremap Y y$
 
+""""""""""""""""""
+"""" COMMANDS """"
+""""""""""""""""""
+
+" Use :W to save a file with sudo
+com -bar W exe 'w !sudo tee >/dev/null %:p:S' | setl nomod
+
 
 """""""""""""""""
 """" PLUGINS """"
