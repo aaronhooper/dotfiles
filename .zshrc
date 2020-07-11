@@ -54,3 +54,6 @@ alias ls="exa"
 alias mutt="neomutt"
 alias d='docker'
 alias dc="docker-compose"
+alias pbcopy="xclip -selection clipboard"
+alias pbpaste="xclip -o -selection clipboard"
+alias eip="curl ipinfo.io/ip"
