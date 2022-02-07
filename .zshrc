@@ -11,11 +11,6 @@ plugins=(zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
-# Import colorscheme from 'wal' asynchronously
-# &   # Run the process in the background.
-# ( ) # Hide shell job control messages.
-(cat ~/.cache/wal/sequences &)
-
 # PATH
 export PATH="${PATH}:${HOME}/.local/bin/" # Local binaries
 export PATH="${PATH}:${HOME}/.yarn/bin/"  # Yarn
