@@ -24,4 +24,7 @@ s = status
 editor = kak
 
 [rebase]
-	autoSquash = true
+autoSquash = true
+
+[credential]
+helper = store
