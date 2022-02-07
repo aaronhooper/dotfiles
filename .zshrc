@@ -55,3 +55,8 @@ alias eip="curl ipinfo.io/ip"
 
 # WSL
 export DESKTOP=/mnt/c/Users/Aaron/Desktop
+
+# nvm
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
