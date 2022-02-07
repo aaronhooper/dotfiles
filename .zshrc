@@ -21,7 +21,7 @@ export PATH="$DENO_INSTALL/bin:$PATH"     # Deno
 export GOPATH="${HOME}/.local/lib/go"
 
 # Editor
-export VISUAL="nvim"
+export VISUAL="kak"
 export EDITOR="$VISUAL"
 
 # Shell editing

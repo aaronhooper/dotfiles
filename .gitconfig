@@ -20,5 +20,8 @@ p = pull
 r = remote
 s = status
 
+[core]
+editor = kak
+
 [rebase]
 	autoSquash = true
