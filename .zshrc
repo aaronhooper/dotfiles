@@ -52,3 +52,6 @@ alias dc="docker-compose"
 alias pbcopy="xclip -selection clipboard"
 alias pbpaste="xclip -o -selection clipboard"
 alias eip="curl ipinfo.io/ip"
+
+# WSL
+export DESKTOP=/mnt/c/Users/Aaron/Desktop
