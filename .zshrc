@@ -15,7 +15,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH="${PATH}:${HOME}/.local/bin/"
 
 # Editor
-export VISUAL="kak"
+export VISUAL="vim"
 export EDITOR="$VISUAL"
 
 # Shell editing
@@ -46,3 +46,10 @@ export DESKTOP=/mnt/c/Users/Aaron/Desktop
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Golang
+export PATH=$PATH:/usr/local/go/bin
+
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
