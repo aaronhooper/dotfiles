@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH="/home/aaron/.oh-my-zsh"
+export ZSH="/home/ahooper/.oh-my-zsh"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="ys"
@@ -15,7 +15,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH="${PATH}:${HOME}/.local/bin/"
 
 # Editor
-export VISUAL="vim"
+export VISUAL="nvim"
 export EDITOR="$VISUAL"
 
 # Shell editing
@@ -29,7 +29,7 @@ export XDG_DATA_HOME="${HOME}/.local/share"
 # Aliases
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias g="git"
-alias vi="vim"
+alias vim="nvim"
 alias latex="tex"
 alias dirs="dirs -v"
 alias ls="exa"
@@ -38,9 +38,6 @@ alias dc="docker-compose"
 alias pbcopy="xclip -selection clipboard"
 alias pbpaste="xclip -o -selection clipboard"
 alias eip="curl ipinfo.io/ip"
-
-# WSL
-export DESKTOP=/mnt/c/Users/Aaron/Desktop
 
 # nvm
 export NVM_DIR="$HOME/.config/nvm"
@@ -51,5 +48,6 @@ export NVM_DIR="$HOME/.config/nvm"
 export PATH=$PATH:/usr/local/go/bin
 
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable
+# change.
 export PATH="$PATH:$HOME/.rvm/bin"

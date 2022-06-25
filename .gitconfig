@@ -21,7 +21,7 @@ r = remote
 s = status
 
 [core]
-editor = vim
+editor = nvim
 
 [rebase]
 autoSquash = true
