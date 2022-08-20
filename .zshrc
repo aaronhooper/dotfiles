@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH="/home/ahooper/.oh-my-zsh"
+export ZSH="/home/aaron/.oh-my-zsh"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="ys"
@@ -47,7 +47,5 @@ export NVM_DIR="$HOME/.config/nvm"
 # Golang
 export PATH=$PATH:/usr/local/go/bin
 
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable
-# change.
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
