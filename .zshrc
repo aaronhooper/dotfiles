@@ -6,8 +6,11 @@ ZSH_THEME="arrow"
 
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git)
-plugins=(zsh-autosuggestions)
+plugins=(
+	git
+	zsh-autosuggestions
+	asdf
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -38,14 +41,6 @@ alias dc="docker-compose"
 alias pbcopy="xclip -selection clipboard"
 alias pbpaste="xclip -o -selection clipboard"
 alias eip="curl ipinfo.io/ip"
-
-# nvm
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # Golang
 export PATH=$PATH:/usr/local/go/bin
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
