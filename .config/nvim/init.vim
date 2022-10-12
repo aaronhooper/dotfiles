@@ -2,11 +2,14 @@ call plug#begin()
 Plug 'elixir-editors/vim-elixir'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/emmet-vim'
+Plug 'tpope/vim-repeat'
+Plug 'ggandor/leap.nvim'
 call plug#end()
 
 " required for vim-elixir
 syntax on
 filetype plugin indent on
+lua require('leap').add_default_mappings()
 
 set hlsearch
 set incsearch
