@@ -1,7 +1,6 @@
 call plug#begin()
 Plug 'elixir-editors/vim-elixir'
 Plug 'jiangmiao/auto-pairs'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mattn/emmet-vim'
 call plug#end()
 
