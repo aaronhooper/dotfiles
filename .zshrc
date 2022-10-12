@@ -41,6 +41,3 @@ alias dc="docker-compose"
 alias pbcopy="xclip -selection clipboard"
 alias pbpaste="xclip -o -selection clipboard"
 alias eip="curl ipinfo.io/ip"
-# Golang
-export PATH=$PATH:/usr/local/go/bin
-
