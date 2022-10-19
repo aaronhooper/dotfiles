@@ -25,3 +25,11 @@ vim.api.nvim_set_keymap(
 	"y$",
 	{ noremap = true }
 )
+
+vim.cmd([[
+set cursorline
+hi cursorline cterm=none term=none
+autocmd WinEnter * setlocal cursorline
+autocmd WinLeave * setlocal nocursorline
+highlight CursorLine guibg=#303000 ctermbg=234
+]])
