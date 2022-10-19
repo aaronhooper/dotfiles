@@ -14,6 +14,7 @@ d = diff
 f = fetch
 g = grep
 l = log --graph --decorate --pretty=oneline --abbrev-commit --all
+lp = log --patch
 m = merge
 co = checkout
 p = pull
