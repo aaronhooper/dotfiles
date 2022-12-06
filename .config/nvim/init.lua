@@ -5,10 +5,12 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-repeat'
 Plug 'ggandor/leap.nvim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 ]])
 
 require('leap').add_default_mappings()
+require('coc')
 
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
