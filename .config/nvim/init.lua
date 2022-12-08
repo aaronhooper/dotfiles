@@ -1,5 +1,5 @@
 require('plugins')
-require('coc')
+require('coc-config')
 
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
