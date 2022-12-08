@@ -1,15 +1,4 @@
-vim.cmd([[
-call plug#begin()
-Plug 'elixir-editors/vim-elixir'
-Plug 'jiangmiao/auto-pairs'
-Plug 'mattn/emmet-vim'
-Plug 'tpope/vim-repeat'
-Plug 'ggandor/leap.nvim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-call plug#end()
-]])
-
-require('leap').add_default_mappings()
+require('plugins')
 require('coc')
 
 vim.opt.hlsearch = true
