@@ -9,4 +9,8 @@ return require('packer').startup(function(use)
         config = function() require('leap').add_default_mappings() end
     }
     use { 'neoclide/coc.nvim', branch = 'release' }
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.0',
+        requires = {{ 'nvim-lua/plenary.nvim' }}
+    }
 end)
