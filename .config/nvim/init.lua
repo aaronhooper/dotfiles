@@ -27,3 +27,5 @@ autocmd WinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
 highlight CursorLine guibg=#303000 ctermbg=234
 ]])
+
+vim.cmd("colorscheme nightfox")
