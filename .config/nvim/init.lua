@@ -1,5 +1,6 @@
 require('plugins')
 require('coc-config')
+require('leap').add_default_mappings()
 
 vim.opt.hlsearch = true
 vim.opt.incsearch = true

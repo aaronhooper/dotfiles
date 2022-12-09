@@ -4,10 +4,7 @@ return require('packer').startup(function(use)
     use 'jiangmiao/auto-pairs'
     use 'mattn/emmet-vim'
     use 'tpope/vim-repeat'
-    use {
-        'ggandor/leap.nvim',
-        config = function() require('leap').add_default_mappings() end
-    }
+    use 'ggandor/leap.nvim'
     use { 'neoclide/coc.nvim', branch = 'release' }
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
