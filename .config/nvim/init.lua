@@ -35,6 +35,8 @@ vim.api.nvim_set_keymap(
 	{ noremap = true }
 )
 
+vim.g.mapleader = " "
+
 vim.cmd([[
 set cursorline
 hi cursorline cterm=none term=none
