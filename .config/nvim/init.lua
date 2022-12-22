@@ -21,6 +21,20 @@ vim.api.nvim_set_keymap(
 	{ noremap = true }
 )
 
+vim.api.nvim_set_keymap(
+    "i",
+    "jk",
+    "<esc>",
+	{ noremap = true }
+)
+
+vim.api.nvim_set_keymap(
+    "i",
+    "kj",
+    "<esc>",
+	{ noremap = true }
+)
+
 vim.cmd([[
 set cursorline
 hi cursorline cterm=none term=none
