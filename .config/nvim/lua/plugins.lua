@@ -12,4 +12,11 @@ return require('packer').startup(function(use)
     }
     use "EdenEast/nightfox.nvim"
     use 'neoclide/vim-jsx-improve'
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = function()
+            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+            ts_update()
+        end,
+    }
 end)
