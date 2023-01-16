@@ -41,3 +41,8 @@ alias dc="docker-compose"
 alias pbcopy="xclip -selection clipboard"
 alias pbpaste="xclip -o -selection clipboard"
 alias eip="curl ipinfo.io/ip"
+
+# pnpm
+export PNPM_HOME="/home/aaron/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
