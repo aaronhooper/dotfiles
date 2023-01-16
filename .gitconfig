@@ -32,3 +32,6 @@ helper = store
 
 [init]
 defaultBranch = main
+
+[pull]
+ff = only
