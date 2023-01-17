@@ -42,7 +42,20 @@ alias pbcopy="xclip -selection clipboard"
 alias pbpaste="xclip -o -selection clipboard"
 alias eip="curl ipinfo.io/ip"
 
+# Git
+alias gs='git status'
+alias gcv='git commit --verbose'
+alias gca='git commit --amend'
+alias ga='git add'
+alias gap='git add --patch'
+alias gl='git log --graph --decorate --pretty=oneline --abbrev-commit --all'
+alias glp='git log --patch'
+alias gf='git fetch'
+alias gd='git diff'
+alias gds='git diff --staged'
+
 # pnpm
 export PNPM_HOME="/home/aaron/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
