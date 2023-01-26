@@ -15,6 +15,7 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.textwidth = 72
 
+-- Keyboard mappings
 vim.api.nvim_set_keymap(
 	"n",
 	"Y",
@@ -45,6 +46,7 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
+-- Highlight cursor line
 vim.cmd([[
 set cursorline
 hi cursorline cterm=none term=none
@@ -53,4 +55,5 @@ autocmd WinLeave * setlocal nocursorline
 highlight CursorLine guibg=#303000 ctermbg=234
 ]])
 
+-- Theme
 vim.cmd("colorscheme nightfox")
