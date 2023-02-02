@@ -54,6 +54,7 @@ alias glp='git log --patch'
 alias gf='git fetch'
 alias gd='git diff'
 alias gds='git diff --staged'
+alias grs='git restore --staged'
 
 # pnpm
 export PNPM_HOME="/home/aaron/.local/share/pnpm"

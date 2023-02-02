@@ -20,6 +20,8 @@ co = checkout
 p = pull
 r = remote
 s = status
+rs = restore --staged
+ds = diff --staged
 
 [core]
 editor = nvim
