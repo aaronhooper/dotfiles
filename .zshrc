@@ -42,6 +42,7 @@ alias dc="docker-compose"
 alias pbcopy="xclip -selection clipboard"
 alias pbpaste="xclip -o -selection clipboard"
 alias eip="curl ipinfo.io/ip"
+alias tf="terraform"
 
 # Git
 alias gs='git status'
