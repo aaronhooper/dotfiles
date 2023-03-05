@@ -9,7 +9,7 @@ The technique consists in storing a [Git bare repository][5] in a "_side_" folde
 If you haven't been tracking your configurations in a Git repository before, you can start using this technique easily with these lines:
     
     
-    git init --bare $HOME/.cfg
+    git init --bare git@github.com:aaronhooper/dotfiles.git $HOME/.cfg
     alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
     config config --local status.showUntrackedFiles no
     echo "alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" >> $HOME/.bashrc
