@@ -41,7 +41,7 @@ After you've executed the setup any file within the `$HOME` folder can be versio
 
 * Now clone your dotfiles into a [bare][5] repository in a _"dot"_ folder of your `$HOME`:
     
-        git clone --bare  $HOME/.cfg
+        git clone --bare git@github.com:aaronhooper/dotfiles.git $HOME/.cfg
 
 * Define the alias in the current shell scope:
     
