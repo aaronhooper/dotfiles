@@ -54,6 +54,8 @@ alias gf='git fetch'
 alias gd='git diff'
 alias gds='git diff --staged'
 alias grs='git restore --staged'
+alias gra='git remote add'
+alias gpu='git push --set-upstream'
 
 # pnpm
 export PNPM_HOME="/home/aaron/.local/share/pnpm"
