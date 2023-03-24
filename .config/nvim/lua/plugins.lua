@@ -33,6 +33,7 @@ return require('packer').startup(function(use)
         end,
     }
     use 'hashivim/vim-terraform'
+    use 'sbdchd/neoformat'
 
     if packer_bootstrap then
         require('packer').sync()
