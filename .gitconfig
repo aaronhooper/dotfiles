@@ -3,26 +3,6 @@ name = Aaron Hooper
 email = rnjckhpr@gmail.com
 username = aaronhooper
 
-[alias]
-a = add
-ap = add -p
-b = branch
-c = commit
-cv = commit -v
-ca = commit --amend
-d = diff
-f = fetch
-g = grep
-l = log --graph --decorate --pretty=oneline --abbrev-commit --all
-lp = log --patch
-m = merge
-co = checkout
-p = pull
-r = remote
-s = status
-rs = restore --staged
-ds = diff --staged
-
 [core]
 editor = nvim
 
