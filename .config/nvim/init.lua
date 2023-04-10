@@ -2,6 +2,12 @@ require('plugins')
 require('coc-config')
 require('leap').add_default_mappings()
 
+require('nvim-treesitter.configs').setup {
+  ensure_installed = "all",
+  highlight = { enable = true },
+  indent = { enable = true },
+}
+
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.number = true
@@ -10,9 +16,9 @@ vim.opt.smartcase = true
 vim.opt.ignorecase = true
 vim.opt.laststatus = 0
 vim.opt.ruler = true
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
 vim.opt.textwidth = 72
 
 -- Keyboard mappings
