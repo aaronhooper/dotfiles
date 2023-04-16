@@ -31,14 +31,7 @@ vim.api.nvim_set_keymap(
 
 vim.api.nvim_set_keymap(
     "i",
-    "jk",
-    "<esc>",
-	{ noremap = true }
-)
-
-vim.api.nvim_set_keymap(
-    "i",
-    "kj",
+    "jj",
     "<esc>",
 	{ noremap = true }
 )
