@@ -33,6 +33,10 @@ return require('packer').startup(function(use)
     }
     use 'hashivim/vim-terraform'
     use 'sbdchd/neoformat'
+    use {
+        'nvim-telescope/telescope-file-browser.nvim',
+        requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+    }
 
     if packer_bootstrap then
         require('packer').sync()

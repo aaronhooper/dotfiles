@@ -8,6 +8,8 @@ require('nvim-treesitter.configs').setup {
   indent = { enable = true },
 }
 
+require("telescope").load_extension "file_browser"
+
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.number = true
@@ -44,6 +46,14 @@ vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+
+-- Open Telescope file_browser with the path of the current buffer
+vim.api.nvim_set_keymap(
+    "n",
+    "<space>fb",
+    ":Telescope file_browser path=%:p:h select_buffer=true<cr>",
+    { noremap = true }
+)
 
 -- Highlight cursor line
 vim.cmd([[
