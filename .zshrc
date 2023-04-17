@@ -41,6 +41,8 @@ alias pbcopy="xclip -selection clipboard"
 alias pbpaste="xclip -o -selection clipboard"
 alias eip="curl ipinfo.io/ip"
 alias tf="terraform"
+alias vimconfig="nvim ~/.config/nvim/init.lua"
+alias cocconfig="nvim ~/.config/nvim/lua/coc-config.lua"
 
 # Git
 alias gs='git status'
