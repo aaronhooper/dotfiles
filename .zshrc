@@ -28,8 +28,6 @@ export XDG_CACHE_HOME="${HOME}/.cache"
 export XDG_DATA_HOME="${HOME}/.local/share"
 
 # Aliases
-alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias g="git"
 alias vim="nvim"
 alias vi="vim"
 alias latex="tex"
@@ -45,6 +43,7 @@ alias vimconfig="nvim ~/.config/nvim/init.lua"
 alias cocconfig="nvim ~/.config/nvim/lua/coc-config.lua"
 
 # Git
+alias g="git"
 alias gs='git status'
 alias gcv='git commit --verbose'
 alias gca='git commit --amend'
@@ -59,6 +58,23 @@ alias gr='git restore'
 alias grs='git restore --staged'
 alias gra='git remote add'
 alias gpu='git push --set-upstream'
+
+# Git (dotfiles)
+alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias cfgs='cfg status'
+alias cfgcv='cfg commit --verbose'
+alias cfgca='cfg commit --amend'
+alias cfga='cfg add'
+alias cfgap='cfg add --patch'
+alias cfgl='cfg log --graph --decorate --pretty=oneline --abbrev-commit --all'
+alias cfglp='cfg log --patch'
+alias cfgf='cfg fetch'
+alias cfgd='cfg diff'
+alias cfgds='cfg diff --staged'
+alias cfgr='cfg restore'
+alias cfgrs='cfg restore --staged'
+alias cfgra='cfg remote add'
+alias cfgpu='cfg push --set-upstream'
 
 # pnpm
 export PNPM_HOME="/home/aaron/.local/share/pnpm"
