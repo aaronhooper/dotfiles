@@ -24,13 +24,15 @@ return require('packer').startup(function(use)
     requires = {{ 'nvim-lua/plenary.nvim' }}
   }
   use "EdenEast/nightfox.nvim"
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = function()
-      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-      ts_update()
-    end,
-  }
+  -- Treesitter is currently breaking Neovim on Windows, so disabling
+  -- for now.
+  --use {
+  --  'nvim-treesitter/nvim-treesitter',
+  --  run = function()
+  --    local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+  --    ts_update()
+  --  end,
+  --}
   use 'hashivim/vim-terraform'
   use 'sbdchd/neoformat'
   use {
