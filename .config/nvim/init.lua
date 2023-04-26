@@ -2,12 +2,22 @@ require('plugins')
 require('coc-config')
 require('leap').add_default_mappings()
 
--- For some reason Treesitter seems to break Neovim on Windows.
---require('nvim-treesitter.configs').setup {
---  ensure_installed = "all",
---  highlight = { enable = true },
---  indent = { enable = true },
---}
+require('nvim-treesitter.configs').setup {
+  -- `ensure_installed = "all"` hangs Neovim for ages on Windows, so
+  -- only specifying parsers from
+  -- https://github.com/nvim-treesitter/nvim-treesitter#modules
+  -- and others that are explicitly needed.
+  ensure_installed = {
+    "c",
+    "lua",
+    "vim",
+    "query",
+    "javascript",
+    "typescript",
+  },
+  highlight = { enable = true },
+  indent = { enable = true },
+}
 
 require("telescope").load_extension "file_browser"
 
