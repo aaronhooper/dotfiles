@@ -36,17 +36,17 @@ vim.opt.textwidth = 72
 
 -- Keyboard mappings
 vim.api.nvim_set_keymap(
-	"n",
-	"Y",
-	"y$",
-	{ noremap = true }
+  "n",
+  "Y",
+  "y$",
+  { noremap = true }
 )
 
 vim.api.nvim_set_keymap(
-    "i",
-    "jj",
-    "<esc>",
-	{ noremap = true }
+  "i",
+  "jj",
+  "<esc>",
+  { noremap = true }
 )
 
 vim.g.mapleader = " "
@@ -60,10 +60,10 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
 -- Open Telescope file_browser with the path of the current buffer
 vim.api.nvim_set_keymap(
-    "n",
-    "<space>fb",
-    ":Telescope file_browser path=%:p:h select_buffer=true<cr>",
-    { noremap = true }
+  "n",
+  "<space>fb",
+  ":Telescope file_browser path=%:p:h select_buffer=true<cr>",
+  { noremap = true }
 )
 
 -- Highlight cursor line
