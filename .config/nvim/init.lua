@@ -33,6 +33,7 @@ vim.opt.expandtab = true
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.textwidth = 72
+vim.opt.autoread = true
 
 -- Keyboard mappings
 vim.api.nvim_set_keymap(
