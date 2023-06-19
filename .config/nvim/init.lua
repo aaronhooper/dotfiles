@@ -77,4 +77,4 @@ highlight CursorLine guibg=#303000 ctermbg=234
 ]])
 
 -- Theme
-vim.cmd("colorscheme nightfox")
+vim.cmd("colorscheme tokyonight")
