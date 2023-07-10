@@ -18,6 +18,9 @@ source $ZSH/oh-my-zsh.sh
 # Local binaries
 export PATH="${PATH}:${HOME}/.local/bin/"
 
+# Scripts
+export PATH="${PATH}:${HOME}/.scripts/"
+
 # Editor
 export VISUAL="nvim"
 export EDITOR="$VISUAL"
