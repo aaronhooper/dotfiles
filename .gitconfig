@@ -1,7 +1,8 @@
 [user]
 name = Aaron Hooper
-email = rnjckhpr@gmail.com
+email = aaron@fxdigital.uk
 username = aaronhooper
+	signingkey = C74A2C7E2059DA88
 
 [core]
 editor = nvim
