@@ -41,6 +41,7 @@ alias dc="docker-compose"
 alias eip="curl ipinfo.io/ip"
 alias tf="terraform"
 alias vimconfig="nvim ~/.config/nvim/init.lua"
+alias vimplugins="nvim ~/.config/nvim/lua/plugins.lua"
 alias cocconfig="nvim ~/.config/nvim/lua/coc-config.lua"
 
 # Git
