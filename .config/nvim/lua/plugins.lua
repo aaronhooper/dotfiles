@@ -13,19 +13,13 @@ local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
-  use 'elixir-editors/vim-elixir'
-  use 'jiangmiao/auto-pairs'
   use 'mattn/emmet-vim'
   use 'tpope/vim-repeat'
-  use 'ggandor/leap.nvim'
   use { 'neoclide/coc.nvim', branch = 'release' }
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
     requires = {{ 'nvim-lua/plenary.nvim' }}
   }
-  use "EdenEast/nightfox.nvim"
-  -- Treesitter is currently breaking Neovim on Windows, so disabling
-  -- for now.
   use {
     'nvim-treesitter/nvim-treesitter',
     run = function()
@@ -33,13 +27,16 @@ return require('packer').startup(function(use)
       ts_update()
     end,
   }
-  use 'hashivim/vim-terraform'
-  use 'sbdchd/neoformat'
   use {
     'nvim-telescope/telescope-file-browser.nvim',
     requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
   }
   use 'folke/tokyonight.nvim'
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
+  use 'vimpostor/vim-tpipeline'
 
   if packer_bootstrap then
     require('packer').sync()
