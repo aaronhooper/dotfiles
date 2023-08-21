@@ -1,8 +1,8 @@
+-- Leader key
 vim.g.mapleader = " "
 
--- Plugin setup
+-- Plugins
 require('plugins')
-require('telescope').load_extension "file_browser"
 
 -- Vim settings
 vim.opt.hlsearch = true
@@ -22,44 +22,20 @@ vim.opt.termguicolors = true
 vim.opt.undofile = true
 vim.opt.showmode = false
 
--- Keyboard mappings
+-- Yank line
 vim.api.nvim_set_keymap(
-  "n",
-  "Y",
-  "y$",
+  "n", "Y", "y$",
   { noremap = true }
 )
 
+-- Mash escape
 vim.api.nvim_set_keymap(
-  "i",
-  "jj",
-  "<esc>",
+  "i", "jj", "<esc>",
   { noremap = true }
 )
 
--- Telescope mappings
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+-- Split lines
+vim.cmd [[
+nnoremap S :keeppatterns substitute/\s*\%#\s*/\r/e <bar> normal! ==<CR>
+]]
 
--- Open Telescope file_browser with the path of the current buffer
-vim.api.nvim_set_keymap(
-  "n",
-  "<space>fb",
-  ":Telescope file_browser path=%:p:h select_buffer=true<cr>",
-  { noremap = true }
-)
-
--- Highlight cursor line
-vim.cmd([[
-set cursorline
-hi cursorline cterm=none term=none
-autocmd WinEnter * setlocal cursorline
-autocmd WinLeave * setlocal nocursorline
-highlight CursorLine guibg=#303000 ctermbg=234
-]])
-
--- Theme
-vim.cmd("colorscheme tokyonight")
