@@ -301,12 +301,13 @@ require("lazy").setup({
   'mattn/emmet-vim',
   'tpope/vim-repeat',
   'vimpostor/vim-tpipeline',
-  {
-    'neoclide/coc.nvim',
-    branch = 'release',
-    build = ':CocInstall',
-    config = coc_settings,
-  },
+  -- Disabling coc.nvim until they fix their shit
+  --{
+  --  'neoclide/coc.nvim',
+  --  branch = 'release',
+  --  build = ':CocInstall',
+  --  config = coc_settings,
+  --},
   {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.0',
