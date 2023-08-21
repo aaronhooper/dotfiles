@@ -1,44 +1,58 @@
-local ensure_packer = function()
-  local fn = vim.fn
-  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-    vim.cmd [[packadd packer.nvim]]
-    return true
-  end
-  return false
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
+vim.opt.rtp:prepend(lazypath)
 
-local packer_bootstrap = ensure_packer()
+require("lazy").setup({
+  'folke/tokyonight.nvim',
+  'mattn/emmet-vim',
+  'nvim-lua/plenary.nvim',
+  'nvim-tree/nvim-web-devicons',
+  'tpope/vim-repeat',
+  'vimpostor/vim-tpipeline',
+  {
+    'neoclide/coc.nvim',
+    branch = 'release',
+    build = ':CocUpdate',
+    config = function () require('coc-config') end,
+  },
+  {
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.0',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    config = function ()
+      local configs = require("nvim-treesitter.configs")
 
-return require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim'
-  use 'mattn/emmet-vim'
-  use 'tpope/vim-repeat'
-  use { 'neoclide/coc.nvim', branch = 'release' }
-  use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.0',
-    requires = {{ 'nvim-lua/plenary.nvim' }}
-  }
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = function()
-      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-      ts_update()
+      configs.setup({
+        ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "elixir", "typescript", "html" },
+        sync_install = false,
+        highlight = { enable = true },
+        indent = { enable = true },
+      })
     end,
-  }
-  use {
+  },
+  {
     'nvim-telescope/telescope-file-browser.nvim',
-    requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
-  }
-  use 'folke/tokyonight.nvim'
-  use {
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+      "nvim-lua/plenary.nvim"
+    },
+  },
+  {
     'nvim-lualine/lualine.nvim',
-    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-  }
-  use 'vimpostor/vim-tpipeline'
-
-  if packer_bootstrap then
-    require('packer').sync()
-  end
-end)
+    config = function () require('lualine-config') end,
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+  },
+}, { defaults = { lazy = false } })
