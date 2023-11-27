@@ -115,10 +115,8 @@ require('lazy').setup({
     'lukas-reineke/indent-blankline.nvim',
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help indent_blankline.txt`
-    opts = {
-      char = '┊',
-      show_trailing_blankline_indent = false,
-    },
+    main = 'ibl',
+    opts = { indent = { char = '┊' } },
   },
 
   -- "gc" to comment visual regions/lines
@@ -153,6 +151,11 @@ require('lazy').setup({
     },
     build = ':TSUpdate',
   },
+  {
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    opts = {} -- this is equalent to setup({}) function
+  }
 }, {})
 
 -- Set highlight on search
@@ -207,6 +210,9 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 
 -- Mash escape
 vim.keymap.set('i', 'jj', '<esc>', { noremap = true })
+
+-- Split lines
+vim.cmd[[nnoremap S :keeppatterns substitute/\s*\%#\s*/\r/e <bar> normal! ==<CR>]]
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`

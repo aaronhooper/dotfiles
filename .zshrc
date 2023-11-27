@@ -83,3 +83,14 @@ export PNPM_HOME="/home/aaron/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
+# asdf
+. /usr/local/opt/asdf/libexec/asdf.sh
+
+# bun completions
+[ -s "/Users/aaron/.bun/_bun" ] && source "/Users/aaron/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="/usr/local/opt/util-linux/bin:$PATH"
+export PATH="/usr/local/opt/util-linux/sbin:$PATH"

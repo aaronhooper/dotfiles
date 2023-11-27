@@ -17,3 +17,7 @@ defaultBranch = main
 
 [pull]
 ff = only
+[push]
+	autoSetupRemote = true
+[commit]
+	gpgsign = false
