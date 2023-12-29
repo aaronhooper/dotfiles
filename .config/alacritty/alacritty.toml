@@ -1,0 +1,25 @@
+[colors.primary]
+background = "#1d1f21"
+bright_foreground = "#eaeaea"
+dim_foreground = "#828482"
+foreground = "#c5c8c6"
+
+[font]
+size = 10
+
+[font.bold]
+style = "Bold"
+
+[font.bold_italic]
+style = "Bold Italic"
+
+[font.italic]
+style = "Italic"
+
+[font.normal]
+family = "JetBrains Mono"
+style = "Regular"
+
+[window.dimensions]
+columns = 80
+lines = 24

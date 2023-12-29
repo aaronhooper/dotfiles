@@ -2,7 +2,7 @@
 export ZSH="${HOME}/.oh-my-zsh"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="arrow"
+ZSH_THEME="robbyrussell"
 #ZSH_THEME="trapd00r"
 
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
@@ -84,7 +84,7 @@ export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
 # asdf
-. /usr/local/opt/asdf/libexec/asdf.sh
+. "$HOME/.asdf/asdf.sh"
 
 # bun completions
 [ -s "/Users/aaron/.bun/_bun" ] && source "/Users/aaron/.bun/_bun"
@@ -94,3 +94,7 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="/usr/local/opt/util-linux/bin:$PATH"
 export PATH="/usr/local/opt/util-linux/sbin:$PATH"
+
+# Rust Path
+export RUST_PATH="$HOME/.cargo/bin"
+export PATH="$PATH:$RUST_PATH"
