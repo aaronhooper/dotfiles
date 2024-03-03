@@ -116,10 +116,10 @@ require('lazy').setup({
   },
 
   {
-    'folke/tokyonight.nvim',
+    'Shatur/neovim-ayu',
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'tokyonight'
+      vim.cmd.colorscheme 'ayu'
     end,
   },
 
