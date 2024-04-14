@@ -71,7 +71,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim', opts = {} },
+  { 'folke/which-key.nvim',  opts = {} },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -231,7 +231,7 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 vim.keymap.set('i', 'jj', '<esc>', { noremap = true })
 
 -- Split lines
-vim.cmd[[nnoremap S :keeppatterns substitute/\s*\%#\s*/\r/e <bar> normal! ==<CR>]]
+vim.cmd [[nnoremap S :keeppatterns substitute/\s*\%#\s*/\r/e <bar> normal! ==<CR>]]
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
@@ -426,14 +426,23 @@ require('mason-lspconfig').setup()
 local servers = {
   -- clangd = {},
   -- gopls = {},
-  -- pyright = {},
+  pyright = {},
   -- rust_analyzer = {},
   tsserver = {},
-  html = { filetypes = { 'html', 'twig', 'hbs'} },
+  html = { filetypes = { 'html', 'twig', 'hbs' } },
 
   lua_ls = {
     Lua = {
-      workspace = { checkThirdParty = false },
+      diagnostics = {
+        globals = { 'vim' },
+      },
+      workspace = {
+        checkThirdParty = false,
+        library = {
+          "${3rd}/love2d/library",
+          "${3rd}/busted/library",
+        },
+      },
       telemetry = { enable = false },
     },
   },
