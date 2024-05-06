@@ -22,3 +22,5 @@ ff = only
 	autoSetupRemote = true
 [commit]
 	gpgsign = false
+[maintenance]
+	repo = /Users/aaron/Code/britbox/britbox-fetch
