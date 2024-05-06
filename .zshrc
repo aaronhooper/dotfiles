@@ -84,7 +84,7 @@ export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
 # asdf
-. "$HOME/.asdf/asdf.sh"
+. /usr/local/opt/asdf/libexec/asdf.sh
 
 # bun completions
 [ -s "/Users/aaron/.bun/_bun" ] && source "/Users/aaron/.bun/_bun"
