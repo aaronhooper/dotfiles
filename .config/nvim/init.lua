@@ -174,7 +174,11 @@ require('lazy').setup({
     'windwp/nvim-autopairs',
     event = "InsertEnter",
     opts = {} -- this is equalent to setup({}) function
-  }
+  },
+  {
+    "nvim-telescope/telescope-file-browser.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+  },
 }, {})
 
 -- Set highlight on search
@@ -255,10 +259,16 @@ require('telescope').setup {
       },
     },
   },
+  extensions = {
+    file_browser = {
+      hijack_netrw = true,
+    }
+  },
 }
 
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
+require('telescope').load_extension 'file_browser'
 
 -- See `:help telescope.builtin`
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
@@ -278,6 +288,8 @@ vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { de
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
+vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
+vim.keymap.set('n', '<leader>fb', require('telescope').extensions.file_browser.file_browser, { desc = '[F]ile [B]rowser' })
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
@@ -427,7 +439,7 @@ local servers = {
   -- clangd = {},
   -- gopls = {},
   pyright = {},
-  -- rust_analyzer = {},
+  rust_analyzer = {},
   tsserver = {},
   html = { filetypes = { 'html', 'twig', 'hbs' } },
 
