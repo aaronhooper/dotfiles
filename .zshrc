@@ -43,6 +43,7 @@ alias tf="terraform"
 alias vimconfig="nvim ~/.config/nvim/init.lua"
 alias vimplugins="nvim ~/.config/nvim/lua/plugins.lua"
 alias cocconfig="nvim ~/.config/nvim/lua/coc-config.lua"
+alias lg="lazygit"
 
 # Git
 alias g="git"
@@ -77,23 +78,6 @@ alias cfgr='cfg restore'
 alias cfgrs='cfg restore --staged'
 alias cfgra='cfg remote add'
 alias cfgpu='cfg push --set-upstream'
-
-# pnpm
-export PNPM_HOME="/home/aaron/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
-
-# asdf
-. "$HOME/.asdf/asdf.sh"
-
-# bun completions
-[ -s "/Users/aaron/.bun/_bun" ] && source "/Users/aaron/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-export PATH="/usr/local/opt/util-linux/bin:$PATH"
-export PATH="/usr/local/opt/util-linux/sbin:$PATH"
 
 # Rust Path
 export RUST_PATH="$HOME/.cargo/bin"
