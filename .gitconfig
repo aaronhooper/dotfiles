@@ -23,4 +23,6 @@ ff = only
 [commit]
 	gpgsign = false
 [maintenance]
-	repo = /Users/aaron/Code/britbox/britbox-fetch
+	repo = /Users/aaronhooper/Code/britbox/britbox-fetch
+[rerere]
+	enabled = true
