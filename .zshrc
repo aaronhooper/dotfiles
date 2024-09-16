@@ -37,12 +37,11 @@ alias latex="tex"
 alias dirs="dirs -v"
 alias ls="exa"
 alias d='docker'
-alias dc="docker-compose"
+alias dc="docker compose"
 alias eip="curl ipinfo.io/ip"
-alias tf="terraform"
-alias vimconfig="nvim ~/.config/nvim/init.lua"
-alias vimplugins="nvim ~/.config/nvim/lua/plugins.lua"
-alias cocconfig="nvim ~/.config/nvim/lua/coc-config.lua"
+alias vimconfig="${EDITOR} ~/.config/nvim/init.lua"
+alias vimplugins="${EDITOR} ~/.config/nvim/lua/plugins.lua"
+alias zshconfig="${EDITOR} .zshrc"
 alias lg="lazygit"
 
 # Git
@@ -78,7 +77,3 @@ alias cfgr='cfg restore'
 alias cfgrs='cfg restore --staged'
 alias cfgra='cfg remote add'
 alias cfgpu='cfg push --set-upstream'
-
-# Rust Path
-export RUST_PATH="$HOME/.cargo/bin"
-export PATH="$PATH:$RUST_PATH"
