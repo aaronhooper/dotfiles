@@ -122,12 +122,12 @@ require("lazy").setup(
                 end
             }
         },
-        -- {"vimpostor/vim-tpipeline"},
+        {"vimpostor/vim-tpipeline"},
         {
-            "Shatur/neovim-ayu",
-            priority = 1000,
+            "folke/tokyonight.nvim",
+            lazy = false,
             config = function()
-                vim.cmd.colorscheme "ayu"
+                vim.cmd.colorscheme "tokyonight"
             end
         },
         {
@@ -184,7 +184,9 @@ require("lazy").setup(
         },
         {"sbdchd/neoformat"},
         {"echasnovski/mini.icons", version = false},
-        {"nvim-tree/nvim-web-devicons"}
+        {"nvim-tree/nvim-web-devicons"},
+        {"folke/zen-mode.nvim"},
+        {"easymotion/vim-easymotion"}
     },
     {}
 )
@@ -196,10 +198,13 @@ vim.g.neoformat_try_node_exe = 1
 vim.api.nvim_create_autocmd(
     "BufWritePre",
     {
-        pattern = {"*.js", "*.ts", "*.lua"},
+        pattern = {"*.js", "*.ts", "*.lua", "*.c", "*.cc"},
         command = "Neoformat"
     }
 )
+
+-- Enable local configuration
+vim.o.exrc = true
 
 -- Set highlight on search
 vim.o.hlsearch = false
@@ -241,6 +246,9 @@ vim.o.termguicolors = true
 -- Relative line numbers
 vim.o.relativenumber = true
 
+-- Highlight the cursor line
+vim.o.cursorline = true
+
 -- [[ Basic Keymaps ]]
 
 -- Keymaps for better default experience
@@ -251,11 +259,18 @@ vim.keymap.set({"n", "v"}, "<Space>", "<Nop>", {silent = true})
 vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", {expr = true, silent = true})
 vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", {expr = true, silent = true})
 
--- Mash escape
-vim.keymap.set("i", "jj", "<esc>", {noremap = true})
-
 -- Split lines
 vim.cmd [[nnoremap S :keeppatterns substitute/\s*\%#\s*/\r/e <bar> normal! ==<CR>]]
+
+-- Create new file in buffer location
+vim.keymap.set("n", "<leader>nf", ":e %:h/", {noremap = true})
+
+-- EasyMotion
+vim.keymap.set("n", "f", "<Plug>(easymotion-overwin-f2)")
+vim.g.EasyMotion_smartcase = 1
+
+-- Run terminal command
+vim.keymap.set("n", "<leader>t", ":term ")
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
@@ -501,11 +516,14 @@ require("mason-lspconfig").setup()
 --  If you want to override the default filetypes that your language server will attach to you can
 --  define the property 'filetypes' to the map in question.
 local servers = {
-    -- clangd = {},
+    clangd = {
+        cmd = {"clangd", "--clang-tidy", "--clang-tidy-checks=*", "--background-index", "--completion-style=detailed"}
+    },
     -- gopls = {},
     pyright = {},
     rust_analyzer = {},
     ts_ls = {},
+    -- denols = {},
     html = {filetypes = {"html", "twig", "hbs"}},
     lua_ls = {
         Lua = {
@@ -602,6 +620,15 @@ cmp.setup {
         {name = "luasnip"}
     }
 }
+
+-- stop double statusline
+vim.g.tpipeline_clearstl = 1
+vim.defer_fn(
+    function()
+        vim.o.laststatus = 0
+    end,
+    0
+)
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=4 sts=4 sw=4 et
