@@ -562,16 +562,14 @@ mason_lspconfig.setup {
     ensure_installed = vim.tbl_keys(servers)
 }
 
-mason_lspconfig.setup_handlers {
-    function(server_name)
-        require("lspconfig")[server_name].setup {
-            capabilities = capabilities,
-            on_attach = on_attach,
-            settings = servers[server_name],
-            filetypes = (servers[server_name] or {}).filetypes
-        }
-    end
-}
+for server_name, server_config in pairs(servers) do
+    require("lspconfig")[server_name].setup {
+        capabilities = capabilities,
+        on_attach = on_attach,
+        settings = server_config,
+        filetypes = (server_config or {}).filetypes
+    }
+end
 
 -- [[ Configure nvim-cmp ]]
 -- See `:help cmp`
