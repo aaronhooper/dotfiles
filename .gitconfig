@@ -9,6 +9,7 @@ editor = nvim
 
 [rebase]
 autoSquash = true
+	updateRefs = true
 
 [credential]
 helper = store
