@@ -1,0 +1,4 @@
+theme = light:tokyonight-day,dark:tokyonight
+font-family = JetBrainsMono Nerd Font Mono
+font-size = 13
+adjust-cell-height = 20%
