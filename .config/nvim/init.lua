@@ -123,6 +123,7 @@ require("lazy").setup(
             }
         },
         {"vimpostor/vim-tpipeline"},
+        {"vimpostor/vim-lumen"},
         {
             "folke/tokyonight.nvim",
             lazy = false,
