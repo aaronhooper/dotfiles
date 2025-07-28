@@ -424,7 +424,10 @@ vim.defer_fn(
                         ["<leader>A"] = "@parameter.inner"
                     }
                 }
-            }
+            },
+            modules = {},
+            sync_install = false,
+            ignore_install = {}
         }
     end,
     0
