@@ -122,7 +122,6 @@ require("lazy").setup(
                 end
             }
         },
-        {"vimpostor/vim-tpipeline"},
         {"vimpostor/vim-lumen"},
         {
             "folke/tokyonight.nvim",
@@ -643,15 +642,6 @@ cmp.setup {
         {name = "luasnip"}
     }
 }
-
--- stop double statusline
-vim.g.tpipeline_clearstl = 1
-vim.defer_fn(
-    function()
-        vim.o.laststatus = 0
-    end,
-    0
-)
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=4 sts=4 sw=4 et
