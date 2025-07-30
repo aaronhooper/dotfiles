@@ -526,10 +526,7 @@ require("which-key").add {
     {"<leader>w_", hidden = true}
 }
 
--- mason-lspconfig requires that these setup functions are called in this order
--- before setting up the servers.
 require("mason").setup()
-require("mason-lspconfig").setup()
 
 -- Enable the following language servers
 --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
@@ -546,7 +543,7 @@ local servers = {
     -- gopls = {},
     pyright = {},
     rust_analyzer = {},
-    ts_ls = {},
+    ts_ls = {filetypes = {"js", "ts", "jsx", "tsx"}},
     -- denols = {},
     html = {filetypes = {"html", "twig", "hbs"}},
     lua_ls = {
@@ -574,9 +571,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 -- Ensure the servers above are installed
-local mason_lspconfig = require "mason-lspconfig"
-
-mason_lspconfig.setup {
+require("mason-lspconfig").setup {
     ensure_installed = vim.tbl_keys(servers)
 }
 
