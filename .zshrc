@@ -41,7 +41,7 @@ alias dc="docker compose"
 alias eip="curl ipinfo.io/ip"
 alias vimconfig="${EDITOR} ~/.config/nvim/init.lua"
 alias vimplugins="${EDITOR} ~/.config/nvim/lua/plugins.lua"
-alias zshconfig="${EDITOR} .zshrc"
+alias zshconfig="${EDITOR} ~/.zshrc"
 alias lg="lazygit"
 
 # Git
@@ -88,3 +88,6 @@ export PATH="${PATH}:${ANDROID_HOME}/platform-tools"
 
 # Java
 . ~/.asdf/plugins/java/set-java-home.zsh
+
+# CDPATH
+export CDPATH=.:$HOME/Code
