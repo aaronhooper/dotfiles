@@ -36,6 +36,7 @@ alias vi="vim"
 alias latex="tex"
 alias dirs="dirs -v"
 alias ls="exa"
+alias la="exa --all"
 alias d='docker'
 alias dc="docker compose"
 alias eip="curl ipinfo.io/ip"
@@ -83,11 +84,26 @@ export PATH="${PATH}:${HOME}/.gem/ruby/2.6.0/bin"
 
 # Android
 export ANDROID_HOME="${HOME}/Library/Android/sdk"
-export PATH="${PATH}:${ANDROID_HOME}/tools/bin"
 export PATH="${PATH}:${ANDROID_HOME}/platform-tools"
+export PATH="${PATH}:${ANDROID_HOME}/emulator"
 
 # Java
 . ~/.asdf/plugins/java/set-java-home.zsh
 
 # CDPATH
 export CDPATH=.:$HOME/Code
+
+# Tizen
+export PATH="${PATH}:${HOME}/tizen-studio/tools"
+export PATH="${PATH}:${HOME}/tizen-studio/tools/ide/bin"
+export TIZEN_CLI="${HOME}/tizen-studio/tools/tizen-core/tz"
+
+sdb-debug() {
+  output=$(sdb shell 0 debug "$1")
+  echo "$output"
+  port=$(echo "$output" | ggrep -oP 'port: \K[0-9]+')
+  echo $port
+  sdb forward tcp:$port tcp:$port
+}
+
+set -o vi

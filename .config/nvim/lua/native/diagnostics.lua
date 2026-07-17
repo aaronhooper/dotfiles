@@ -1,0 +1,16 @@
+-- vim.diagnostic.config({
+--   severity_sort = true,
+--   float = {
+--     border = "rounded",
+--     source = "if_many",
+--   },
+--   virtual_text = {
+--     source = "if_many",
+--     spacing = 2,
+--   },
+--   signs = true,
+--   underline = true,
+--   update_in_insert = false,
+-- })
+--
+vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Line diagnostics" })
